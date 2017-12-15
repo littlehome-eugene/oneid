@@ -123,4 +123,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-SESSION_COOKIE_DOMAIN=".hyundai.kr"
+SESSION_COOKIE_DOMAIN=".zibann.kr"
