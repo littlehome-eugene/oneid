@@ -39,23 +39,20 @@ public class MainController {
         return "u";
     }
 
-  @RequestMapping(value="/login/oauth_login", method = RequestMethod.GET)
-  public String oauth_login(Principal principal) {
-    if ((principal instanceof Authentication) && ((Authentication) principal).isAuthenticated()) {
-      return "logged-in";
-    } else {
-      return "logged-out";
+    @RequestMapping(value = "/login/oauth_login", method = RequestMethod.GET)
+    public String oauth_login(Principal principal) {
+        if ((principal instanceof Authentication) && ((Authentication) principal).isAuthenticated()) {
+            return "logged-in";
+        } else {
+            return "logged-out";
+        }
+
     }
 
-  }
 
-
-  @RequestMapping("/login")
-  public String login() {
-    return "login";
-  }
     @RequestMapping("/login")
-    public ModelAndView loginForm() {
-        return new ModelAndView("loginForm");
+    public String login() {
+        return "loginForm";
     }
+
 }
