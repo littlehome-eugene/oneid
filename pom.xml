@@ -18,10 +18,20 @@
         <relativePath/>
     </parent>
 
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
     </properties>
+
+
+    <repositories>
+        <repository>
+            <id>spring-milestone-repository</id>
+            <name></name>
+            <url>http://repo.spring.io/milestone/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -114,6 +124,19 @@
 	      <dependency>
 		      <groupId>org.springframework.session</groupId>
 		      <artifactId>spring-session-jdbc</artifactId>
+          <version>2.0.0.RC2</version>
+	      </dependency>
+
+	      <dependency>
+		      <groupId>org.springframework.session</groupId>
+		      <artifactId>spring-session-hazelcast</artifactId>
+          <version>2.0.0.RC2</version>
+	      </dependency>
+
+	      <dependency>
+		      <groupId>org.springframework.session</groupId>
+		      <artifactId>spring-session-data-redis</artifactId>
+          <version>2.0.0.RC2</version>
 	      </dependency>
 
     </dependencies>
