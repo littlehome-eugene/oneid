@@ -22,6 +22,10 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
+        <thymeleafspringsecurity4.version>3.0.2.RELEASE</thymeleafspringsecurity4.version>
+        <!-- https://stackoverflow.com/questions/43197416/spring-boot-thymeleaf-error-java-lang-classnotfoundexception-org-thymeleaf-do -->
+        <thymeleaf-layout-dialect.version>2.2.1</thymeleaf-layout-dialect.version>
     </properties>
 
 
@@ -121,24 +125,38 @@
           <version>1.9.21</version><!--$NO-MVN-MAN-VER$-->
         </dependency>
 
-	      <dependency>
-		      <groupId>org.springframework.session</groupId>
-		      <artifactId>spring-session-jdbc</artifactId>
+        <dependency>
+          <groupId>org.springframework.session</groupId>
+          <artifactId>spring-session-jdbc</artifactId>
           <version>2.0.0.RC2</version>
-	      </dependency>
+        </dependency>
 
-	      <dependency>
-		      <groupId>org.springframework.session</groupId>
-		      <artifactId>spring-session-hazelcast</artifactId>
+        <dependency>
+          <groupId>org.springframework.session</groupId>
+          <artifactId>spring-session-hazelcast</artifactId>
           <version>2.0.0.RC2</version>
-	      </dependency>
+        </dependency>
 
-	      <dependency>
-		      <groupId>org.springframework.session</groupId>
-		      <artifactId>spring-session-data-redis</artifactId>
+        <dependency>
+          <groupId>org.springframework.session</groupId>
+          <artifactId>spring-session-data-redis</artifactId>
           <version>2.0.0.RC2</version>
-	      </dependency>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.thymeleaf.extras</groupId>
+          <artifactId>thymeleaf-extras-java8time</artifactId>
+        </dependency>
+
+<dependency>
+    <groupId>org.thymeleaf.extras</groupId>
+    <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+    <version>3.0.2.RELEASE</version>
+</dependency>
     </dependencies>
 
     <build>
