@@ -1,4 +1,13 @@
+왜 index.html 로 매핑이 된건지..
+/auth_login handler 를 만들자 (/oauth/authorize 에서 로그인이 안된 경우 쓸 login handler)
 session backend
 url redirect, quote
 handle json request
 request json request over hpay
+
+
+
+	@RequestMapping(value = "/oauth/authorize")
+	public ModelAndView authorize(Map<String, Object> model, @RequestParam Map<String, String> parameters,
+	@RequestMapping(value = "/oauth/authorize", method = RequestMethod.POST, params = OAuth2Utils.USER_OAUTH_APPROVAL)
+	public View approveOrDeny(@RequestParam Map<String, String> approvalParameters, Map<String, ?> model,
