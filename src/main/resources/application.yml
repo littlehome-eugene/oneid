@@ -46,3 +46,7 @@ spring:
     max-wait: 30000
     test-on-borrow: true
     test-while-idle: true
+  freemarker:
+    template-loader-path: classpath:/templates
+    suffix: .html
+

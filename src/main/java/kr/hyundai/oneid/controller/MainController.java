@@ -2,9 +2,11 @@ package kr.hyundai.oneid.controller;
 
 import org.springframework.http.HttpRequest;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
@@ -34,5 +36,8 @@ public class MainController {
         return "u";
     }
 
-
+    @RequestMapping("/login")
+    public ModelAndView loginForm() {
+        return new ModelAndView("loginForm");
+    }
 }
