@@ -20,22 +20,47 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.session.jdbc.config.annotation.web.http.EnableJdbcHttpSession;
 import org.springframework.session.web.http.CookieSerializer;
 import org.springframework.session.web.http.DefaultCookieSerializer;
+import org.springframework.context.annotation.Profile;
 
 // tag::class[]
 @EnableJdbcHttpSession // <1>
 public class HttpSessionConfig {
 
 	// tag::cookie-serializer[]
+	// @Bean
+  // @Profile("develop")
+	// public CookieSerializer cookieSerializer2() {
+	// 	DefaultCookieSerializer serializer = new DefaultCookieSerializer();
+  //   serializer.setDomainName(".zibann.kr");
+
+	// 	// serializer.setDomainNamePattern("^.+?(\\.\\w+\\.[a-z]+)$"); // <3>
+	// 	return serializer;
+	// }
+	// end::cookie-serializer[]
+
 	@Bean
+  @Profile("production")
 	public CookieSerializer cookieSerializer() {
 		DefaultCookieSerializer serializer = new DefaultCookieSerializer();
-		// serializer.setCookieName("JSESSIONID"); // <1>
-		// serializer.setCookiePath("/"); // <2>
-    serializer.setDomainName(".zibann.kr");
+    // serializer.setDomainName(".hpay.kr");
+    serializer.setDomainName("zibann.kr");
+
+    System.out.println("aaa");
 		// serializer.setDomainNamePattern("^.+?(\\.\\w+\\.[a-z]+)$"); // <3>
 		return serializer;
 	}
 	// end::cookie-serializer[]
 
 }
+// end::class[]
+
+
+// tag::class[]
+
+// @Profile("production")
+// public class HttpSessionConfig {
+
+// 	// tag::cookie-serializer[]
+
+// }
 // end::class[]

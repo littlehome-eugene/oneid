@@ -7,9 +7,12 @@ import java.io.Serializable;
 @Data
 public class User implements Serializable {
 
-    String userId;
+  String userId;
 
-    String password;
+  String password;
 
-    String type = "USER";
+  String hash;
+  String hkey;
+
+  String type = "USER";
 }

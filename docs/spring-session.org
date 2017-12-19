@@ -1,0 +1,31 @@
+pom.xml 에 dependency 를 추가합니다.
+
+
+        <dependency>
+          <groupId>org.springframework.session</groupId>
+          <artifactId>spring-session-jdbc</artifactId>                                                                                                                                    <version>2.0.0.RC2</version>
+        </dependency>                                                                                                                                                                                                                                                                                                                                                   <dependency>
+          <groupId>org.springframework.session</groupId>                                                                                                                                  <artifactId>spring-session-hazelcast</artifactId>                                                                                                                               <version>2.0.0.RC2</version>
+        </dependency>
+
+
+applicaiton.yml 에 session 저장을 위해 jdbc 를 사용하는 것으로 설정합니다
+
+spring:
+  session:
+    store-type: jdbc
+
+spring session 의 cookie 에 domainname 을 설정합니다.
+HttpSessionConfig.java
+
+
+tomcat8 이 .example.com 의 domain name 을 사용할수 있도록 다음과 같이 config 를 추가합니다.
+  @Bean
+  public EmbeddedServletContainerCustomizer customizer() {
+    return container -> {
+      if (container instanceof TomcatEmbeddedServletContainerFactory) {
+        TomcatEmbeddedServletContainerFactory tomcat = (TomcatEmbeddedServletContainerFactory) container;
+        tomcat.addContextCustomizers(context -> context.setCookieProcessor(new LegacyCookieProcessor()));
+      }
+    };
+  }
