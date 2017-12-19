@@ -31,7 +31,8 @@ public class HttpSessionConfig {
 		DefaultCookieSerializer serializer = new DefaultCookieSerializer();
 		// serializer.setCookieName("JSESSIONID"); // <1>
 		// serializer.setCookiePath("/"); // <2>
-		serializer.setDomainNamePattern("^\\..+?\\.(\\w+\\.[a-z]+)$"); // <3>
+    serializer.setDomainName(".zibann.kr");
+		// serializer.setDomainNamePattern("^.+?(\\.\\w+\\.[a-z]+)$"); // <3>
 		return serializer;
 	}
 	// end::cookie-serializer[]

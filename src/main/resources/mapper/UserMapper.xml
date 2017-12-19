@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.hyundai.oneid.module.persistence.UserMapper">
     <resultMap id="BaseResultMap" type="kr.hyundai.oneid.user.User">
-        <result column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="user_id" jdbcType="VARCHAR" property="userId"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
     </resultMap>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select *
-    from USER
-    where id = #{id}
+    from user
+    where user_id = #{id}
 </select>
 </mapper>

@@ -1,13 +1,18 @@
 왜 index.html 로 매핑이 된건지..
 /auth_login handler 를 만들자 (/oauth/authorize 에서 로그인이 안된 경우 쓸 login handler)
-session backend
+# session backend
+# session 공유
 url redirect, quote
-handle json request
-request json request over hpay
-
+# handle json request
+# request json request over hpay
+.zibann.kr dependency제거
 
 
 	@RequestMapping(value = "/oauth/authorize")
 	public ModelAndView authorize(Map<String, Object> model, @RequestParam Map<String, String> parameters,
 	@RequestMapping(value = "/oauth/authorize", method = RequestMethod.POST, params = OAuth2Utils.USER_OAUTH_APPROVAL)
 	public View approveOrDeny(@RequestParam Map<String, String> approvalParameters, Map<String, ?> model,
+
+
+3:00 ~ 8:00
+12/19 1:00 ~ 2:30

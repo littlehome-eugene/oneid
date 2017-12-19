@@ -24,8 +24,11 @@ public class SecurityService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        log.info("1");
+
         User user = userService.selectById(username);
 
+        log.info("user" +  user);
         if (user == null)
             throw new UsernameNotFoundException("");
 

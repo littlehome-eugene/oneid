@@ -35,7 +35,7 @@ public class AuthUserData implements Serializable, UserDetails {
     public AuthUserData(User user, boolean accountNonExpired, boolean accountNonLocked, boolean credentialsNonExpired, boolean enabled, Collection<? extends GrantedAuthority> authorities) {
 
         this.userData = new UserData(user);
-        this.username = user.getId();
+        this.username = user.getUserId();
         this.password = user.getPassword();
         this.accountNonExpired = accountNonExpired;
         this.accountNonLocked = accountNonLocked;

@@ -7,7 +7,7 @@ import java.io.Serializable;
 @Data
 public class User implements Serializable {
 
-    String id;
+    String userId;
 
     String password;
 
