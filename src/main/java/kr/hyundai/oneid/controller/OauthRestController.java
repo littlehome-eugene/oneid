@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.security.oauth2.provider.client.BaseClientDetails;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.hyundai.oneid.model.oauth.Client;
 
@@ -30,7 +31,7 @@ public class OauthRestController {
     clientDetails.setAuthorizedGrantTypes(grantTypes);
 
     String redirectUri = client.getRedirectUri1();
-    List<string> redirectUris = Arrays.asList(redirectUri);
+    List<String> redirectUris = Arrays.asList(redirectUri);
     clientDetails.setRedirectUris(redirectUris);
 
 		service.addClientDetails(clientDetails);
