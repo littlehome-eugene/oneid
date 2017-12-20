@@ -10,6 +10,9 @@ client register endpoint
 test user password
 
 
+ClientDetailsUserDetailsServiceTests.java
+
+
 	@RequestMapping(value = "/oauth/authorize")
 	public ModelAndView authorize(Map<String, Object> model, @RequestParam Map<String, String> parameters,
 	@RequestMapping(value = "/oauth/authorize", method = RequestMethod.POST, params = OAuth2Utils.USER_OAUTH_APPROVAL)
