@@ -24,5 +24,10 @@ public class LoginController {
         return "login";
     }
 
+  @RequestMapping("/swagger")
+    public String swagger() {
+        return "redirect:/swagger-ui.html";
+    }
+
 
 }
