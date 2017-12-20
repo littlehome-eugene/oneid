@@ -1,4 +1,4 @@
-package kr.hyundai.oneid.user;
+package kr.hyundai.oneid.model.user;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
