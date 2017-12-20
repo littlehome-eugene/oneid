@@ -8,7 +8,7 @@ url redirect, quote
 .zibann.kr dependency제거
 client register endpoint
 test user password
-
+인터페이스 정의서 update
 
 ClientDetailsUserDetailsServiceTests.java
 

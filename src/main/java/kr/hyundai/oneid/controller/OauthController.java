@@ -22,41 +22,14 @@ import kr.hyundai.oneid.model.oauth;
 @Controller
 public class OauthController {
 
-    @RequestMapping("/client/register")
-    public String clientRegister() {
-        return "client_register";
-    }
+  @Autowired
+	OauthService service;
 
-
-  @RequestMapping("/client/register", method=RequestMethod.POST)
-  public String clientRegister(Client client) {
-
-		db = new EmbeddedDatabaseBuilder().addDefaultScripts().build();
-		jdbcTemplate = new JdbcTemplate(db);
-		service = new JdbcClientDetailsService(db);
-
-		BaseClientDetails clientDetails = new BaseClientDetails();
-    String clientId = UUID.randomUUID().toString();
-		clientDetails.setClientId(clientId);
-    String clientSecret = UUID.randomUUID().toString();
-		clientDetails.setClientSecret(clientSecret);
-
-    clientDetails.setScope("read");
-    List<String> scopes = Arrays.asList("read");
-    clientDetails.setAutoApproveScopes(scopes);
-
-
-    List<String> grantTypes = Arrays.asList("authorization-code");
-    clientDetails.setAuthorizedGrantTypes(grantTypes);
-
-
-    List<String> redirectUris = client.getRedirectUris();
-    clientDetails.setAuthorizedGrantTypes(redirectUris);
-
-		service.addClientDetails(clientDetails);
-
+  @RequestMapping("/client/register")
+  public String clientRegister() {
     return "client_register";
   }
+
 
 
 }
