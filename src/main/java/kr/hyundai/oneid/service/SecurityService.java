@@ -1,10 +1,8 @@
 package kr.hyundai.oneid.service;
 
 
-import kr.hyundai.oneid.model.user.AuthUserData;
-import kr.hyundai.oneid.model.user.User;
-import com.google.common.collect.Lists;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,7 +11,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.google.common.collect.Lists;
+
+import kr.hyundai.oneid.model.user.AuthUserData;
+import kr.hyundai.oneid.model.user.User;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
