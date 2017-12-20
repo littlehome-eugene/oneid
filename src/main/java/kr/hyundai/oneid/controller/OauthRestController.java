@@ -20,11 +20,14 @@ public class OauthRestController {
   @Autowired
   OauthService service;
 
-  @RequestMapping("/client/register")
+
+  @RequestMapping("/client/registerAction")
   public String clientRegister(String redirectUri1) {
 
 		BaseClientDetails clientDetails = new BaseClientDetails();
     String clientId = UUID.randomUUID().toString();
+
+
 		clientDetails.setClientId(clientId);
     String clientSecret = UUID.randomUUID().toString();
 		clientDetails.setClientSecret(clientSecret);
@@ -39,8 +42,11 @@ public class OauthRestController {
     Set<String> redirectUris = new HashSet<String>(Arrays.asList(redirectUri1));
     clientDetails.setRegisteredRedirectUri(redirectUris);
 
-		service.addClientDetails(clientDetails);
-    return clientDetails;
+    Client client = new Client(clientDetails);
+
+		service.insertClientValue(client);
+    // return client.clientSecret;
+    return client.toString();
   }
 
 }

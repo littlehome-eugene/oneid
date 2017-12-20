@@ -10,5 +10,4 @@ import java.util.List;
 public interface UserMapper {
     User selectByPrimaryKey(String id);
 
-    void insertClients(List<Client> clientList);
 }

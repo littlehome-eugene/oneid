@@ -9,14 +9,9 @@ import kr.hyundai.oneid.service.OauthService;
 @Controller
 public class OauthController {
 
-  @Autowired
-	OauthService service;
-
   @RequestMapping("/client/register")
   public String clientRegister() {
     return "client_register";
   }
-
-
 
 }

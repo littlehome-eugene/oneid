@@ -10,5 +10,5 @@ import java.util.List;
 public interface OAuthMapper {
     Client selectByPrimaryKey(String id);
 
-    int insertClientDetails(List<Client> client);
+    int insertClientDetails(Client client);
 }

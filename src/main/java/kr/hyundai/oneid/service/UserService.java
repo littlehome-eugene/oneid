@@ -17,14 +17,8 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
-    @Autowired
-    OAuthMapper oAuthMapper;
-
     public User selectById(String userId) {
         return userMapper.selectByPrimaryKey(userId);
     }
 
-    public int insertClientValue(List<Client> clientList) {
-        return oAuthMapper.insertClientDetails(clientList);
-    }
 }

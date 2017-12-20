@@ -20,17 +20,16 @@
     FROM oauth_client_details
     WHERE client_id = #{client_id}
   </select>
-    <insert id="insertClientDetails">
-        <if test="staffList.size != 0">
+  <insert id="insertClientDetails"
+          parameterType="kr.hyundai.oneid.model.oauth.Client"
+          >
             INSERT INTO oauth_client_details
             (client_id, client_secret, resource_ids, scope, authorized_grant_types,
             web_server_redirect_uri, authorities,
             access_token_validity, refresh_token_validity, autoapprove)
-            <foreach collection="staffList" item="item" separator=",">
-                VALUES (item.clientId, item.clientSecret, item.resourceIds, item.scope, item.authorizedGrantTypes,
-                item.registeredRedirectUris, item.authorities,
-                item.accessTokenValiditySeconds, item.additionalInformation, item.autoApproveScopes)
-            </foreach>
-        </if>
+            VALUES (
+            #{clientId}, #{clientSecret}, #{resourceIds}, #{scope}, #{authorizedGrantTypes},
+                #{registeredRedirectUris}, #{authorities},
+                #{accessTokenValiditySeconds}, #{additionalInformation}, #{autoApproveScopes})
     </insert>
 </mapper>

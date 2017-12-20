@@ -17,7 +17,7 @@ public class OauthService {
     @Autowired
     OAuthMapper oAuthMapper;
 
-    public int insertClientValue(List<Client> clientList) {
-        return oAuthMapper.insertClientDetails(clientList);
+    public int insertClientValue(Client client) {
+        return oAuthMapper.insertClientDetails(client);
     }
 }
