@@ -1,35 +1,32 @@
 package kr.hyundai.oneid.model.oauth;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
 
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Client implements Serializable {
 
-	private String clientId;
-	private String clientSecret;
-	private Set<String> scope = Collections.emptySet();
-  private Set<String> resourceIds = Collections.emptySet();
-  private Set<String> authorizedGrantTypes = Collections.emptySet();
+    private String clientId;
+    private String clientSecret;
+    private String scope;
+    private String resourceIds;
+    private String authorizedGrantTypes;
 
-	private Set<String> registeredRedirectUris;
-  private Set<String> autoApproveScopes;
-	private List<GrantedAuthority> authorities = Collections.emptyList();
-  private Integer accessTokenValiditySeconds;
-  private Integer refreshTokenValiditySeconds;
-  private Map<String, Object> additionalInformation = new LinkedHashMap<String, Object>();
+    private String registeredRedirectUris;
+    private String autoApproveScopes;
+    private String authorities;
+    private Integer accessTokenValiditySeconds;
+    private Integer refreshTokenValiditySeconds;
 
+    @JsonIgnoreProperties
+    private Map<String, Object> additionalInformation = new LinkedHashMap<String, Object>();
 }

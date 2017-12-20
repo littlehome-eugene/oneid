@@ -7,8 +7,8 @@ import kr.hyundai.oneid.model.user.User;
 import java.util.List;
 
 @PayData
-public interface UserMapper {
-    User selectByPrimaryKey(String id);
+public interface OAuthMapper {
+    Client selectByPrimaryKey(String id);
 
-    void insertClients(List<Client> clientList);
+    int insertClientDetails(List<Client> client);
 }
